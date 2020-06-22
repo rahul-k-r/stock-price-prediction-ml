@@ -86,6 +86,10 @@ loadedModel = keras.models.load_model('mymodel.hdf5')
 trainPredict = loadedModel.predict(trainX)
 testPredict = loadedModel.predict(testX)
 
+# converter = tf.lite.TFLiteConverter.from_keras_model(loadedModel)
+# tflite_model = converter.convert()
+# open('mymodel.tflite','wb').write(tflite_model)
+
 trainPredict = scaler.inverse_transform(trainPredict)
 trainY = scaler.inverse_transform([trainY])
 testPredict = scaler.inverse_transform(testPredict)
