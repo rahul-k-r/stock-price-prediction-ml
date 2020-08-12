@@ -79,7 +79,7 @@ model.add(Dense(1))
 model.add(Activation('linear'))
 
 model.compile(loss='mean_squared_error', optimizer='adagrad')
-model.fit(trainX, trainY, epochs=2000, batch_size=256, verbose=2)
+model.fit(trainX, trainY, epochs=2500, batch_size=256, verbose=2)
 model.save('mymodel.hdf5')
 
 loadedModel = keras.models.load_model('mymodel.hdf5')
